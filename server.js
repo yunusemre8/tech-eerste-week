@@ -11,7 +11,7 @@ app.get('/', home);
 app.get('/about', about);
 app.get('/login', login);
 app.get('/profile/:username', profile);
-app.get("/detail", toonDetail)
+// app.get("/detail", toonDetail)
 
 app.set("view engine", "ejs")
 app.set('views', 'view')
@@ -74,6 +74,20 @@ function addMovie(req, res) {
     `)
 }
 
+
+// const { MongoClient, ServerApiVersion } = require("mongodb");
+ 
+// const uri = process.env.MONGODB_URI;
+ 
+// const client = new MongoClient(uri,  {
+//     serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict: true,
+//         deprecationErrors: true,
+//     }
+// });
+
+
 // 404 fallback (altijd als laatste!)
 app.use((req, res) => {
     res.status(404).send('404 - Not Found Error');
@@ -82,4 +96,5 @@ app.use((req, res) => {
 app.listen(3000, () => {
     console.log("server is running on http://localhost:3000");
 });
+
 
