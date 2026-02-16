@@ -1,0 +1,28 @@
+<!doctype html>
+
+<title><%= data.title %> - Movie Site</title>
+
+<h1><%= data.title %></h1>
+<p><%= data.description %></p>
+<p><a href="/">Back to list</a></p>
+
+<form action="/" method="POST">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button type="submit">Verstuur</button>
+  </form>
+
+  <%- include('head.ejs') %>
+<h1>Add a movie</h1>
+<form action="/add-movie" method="POST">
+    <label>Title</label>
+    <input type="text" name=""title>
+
+    <label>Plot</label>
+    <input type="text" name="plot">
+
+    <label>Description</label>
+    <textarea name="description"></textarea>
+
+    <input type="submit" value="Add Movie">
+</form>
